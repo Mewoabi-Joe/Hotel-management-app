@@ -1,0 +1,31 @@
+# IntelliJ IDEA
+.idea/
+
+# Compiled Java class files
+/out/
+
+# Generated JavaFX artifacts
+/out/production/
+
+# Compiled JavaFX application resources
+/out/production/resources/
+
+# Log files
+*.log
+
+# User-specific files (e.g., workspace.xml, .idea/misc.xml)
+.idea/workspace.xml
+.idea/misc.xml
+
+# Exclude .iml files and .idea/modules.xml if using IntelliJ IDEA's project files
+*.iml
+.idea/modules.xml
+
+# Exclude .iws files if you use IntelliJ IDEA's project files
+*.iws
+
+# Exclude .ipr files if you use IntelliJ IDEA's project files
+*.ipr
+
+# Exclude .iws files if you use IntelliJ IDEA's project files
+*.iws

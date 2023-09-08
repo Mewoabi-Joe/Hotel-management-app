@@ -1,0 +1,258 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.geometry.Rectangle2D?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.InnerShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<TabPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="850.0" prefWidth="993.0" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+  <tabs>
+    <Tab text="BOOKING">
+      <content>
+        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <AnchorPane layoutX="-1.0" layoutY="1.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="790.0" prefWidth="993.0" stylesheets="@../ressources/style.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <children>
+                        <ImageView fitHeight="717.0" fitWidth="1055.0" layoutY="85.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="-23.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="-164.0" AnchorPane.topAnchor="85.0">
+                           <image>
+                              <Image url="@../ressources/hotel-cloche_1203-28981.jpg" />
+                           </image>
+                           <viewport>
+                              <Rectangle2D width="400.0" />
+                           </viewport>
+                        </ImageView>
+                        <AnchorPane prefHeight="766.0" prefWidth="995.0" AnchorPane.bottomAnchor="-16.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="-141.0" AnchorPane.topAnchor="0.0">
+                           <children>
+                              <TextField fx:id="name" layoutX="22.0" layoutY="166.0" prefHeight="26.0" prefWidth="168.0" style="-fx-background-color: white; -fx-background-radius: 5px;" />
+                              <Label layoutX="38.0" layoutY="142.0" prefHeight="17.0" prefWidth="77.0" stylesheets="@../ressources/style.css" text="First Name" />
+                              <AnchorPane layoutY="-1.0" prefHeight="88.0" prefWidth="995.0" style="-fx-background-color: #FA2C56;">
+                                 <children>
+                                    <ImageView fitHeight="82.0" fitWidth="106.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="2.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="796.0" AnchorPane.topAnchor="0.0">
+                                       <image>
+                                          <Image url="@../ressources/icons8_add_user_group_woman_man_80px_1.png" />
+                                       </image>
+                                    </ImageView>
+                                 </children>
+                              </AnchorPane>
+                              <Label layoutX="38.0" layoutY="342.0" text="Nationality" />
+                              <Label layoutX="38.0" layoutY="436.0" text="Gender" />
+                              <TextField fx:id="email" layoutX="26.0" layoutY="537.0" prefHeight="26.0" prefWidth="170.0" style="-fx-background-color: white; -fx-background-radius: 5px;" />
+                              <Label layoutX="37.0" layoutY="518.0" text="Email" />
+                              <TextField fx:id="mobile" layoutX="22.0" layoutY="299.0" prefHeight="26.0" prefWidth="168.0" style="-fx-background-color: white; -fx-background-radius: 5px;" />
+                              <Label layoutX="37.0" layoutY="278.0" prefHeight="18.0" prefWidth="102.0" text="Mobile Number" />
+                              <TextField fx:id="nationality" layoutX="21.0" layoutY="363.0" prefHeight="26.0" prefWidth="173.0" style="-fx-background-color: white; -fx-background-radius: 5px;" />
+                              <ComboBox fx:id="gender" accessibleText="&#10;" layoutX="27.0" layoutY="454.0" onAction="#valeurs" prefHeight="28.0" prefWidth="168.0" style="-fx-background-radius: 5px;" />
+                              <TextField fx:id="address" layoutX="379.0" layoutY="222.0" prefHeight="26.0" prefWidth="171.0" style="-fx-background-color: white; -fx-background-radius: 5px;" />
+                              <Label layoutX="408.0" layoutY="204.0" text="address" />
+                              <TextField fx:id="checkin" layoutX="388.0" layoutY="299.0" prefHeight="26.0" prefWidth="168.0" style="-fx-background-color: white; -fx-background-radius: 5px;" />
+                              <Label layoutX="409.0" layoutY="275.0" text="Check In Date(Today)" />
+                              <Label layoutX="409.0" layoutY="340.0" text="Bed" />
+                              <Label layoutX="782.0" layoutY="143.0" text="Room Type" />
+                              <Label layoutX="782.0" layoutY="238.0" text="Room Number" />
+                              <ComboBox fx:id="room_number" layoutX="768.0" layoutY="260.0" onAction="#valeurs" prefHeight="28.0" prefWidth="168.0" style="-fx-background-radius: 5px;" />
+                              <ComboBox fx:id="bed" layoutX="388.0" layoutY="359.0" onAction="#valeurs" onMouseEntered="#effet1" onMouseExited="#effet2" prefHeight="28.0" prefWidth="168.0" style="-fx-background-radius: 5px;" />
+                              <ComboBox fx:id="room_type" layoutX="768.0" layoutY="162.0" onAction="#valeurs" prefHeight="28.0" prefWidth="168.0" style="-fx-background-radius: 5px;" />
+                              <ComboBox fx:id="room_service" layoutX="772.0" layoutY="358.0" onAction="#valeurs" prefHeight="28.0" prefWidth="168.0" promptText="HOW DO YOU WANT TO PAY?" style="-fx-background-radius: 5px;" />
+                              <Label layoutX="782.0" layoutY="338.0" text="Payment method" />
+                              <Button id="enregistrer" fx:id="enregistrer" layoutX="533.0" layoutY="634.0" mnemonicParsing="false" onAction="#enregistrer_client_chambre" onMouseEntered="#effet1" onMouseExited="#effet2" prefHeight="42.0" prefWidth="138.0" text="Allote Room">
+                                 <stylesheets>
+                                    <URL value="@../ressources/style.css" />
+                                    <URL value="@../ressources/style.css" />
+                                 </stylesheets>
+                              </Button>
+                              <TextField fx:id="price" layoutX="774.0" layoutY="455.0" prefHeight="26.0" prefWidth="168.0" style="-fx-background-color: WHITE; -fx-background-radius: 5px;" />
+                              <Label layoutX="787.0" layoutY="436.0" text="Price per day" />
+                              <TextField fx:id="numberofday" layoutX="380.0" layoutY="455.0" prefHeight="26.0" prefWidth="172.0" style="-fx-background-color: white; -fx-background-radius: 5px;" />
+                              <Label layoutX="405.0" layoutY="436.0" text="Number of day" />
+                              <TextField fx:id="finalprice" layoutX="774.0" layoutY="532.0" prefHeight="26.0" prefWidth="172.0" style="-fx-background-color: white; -fx-background-radius: 5px;" />
+                              <Label layoutX="785.0" layoutY="515.0" text="Final Price" />
+                              <Button id="enregistrer" fx:id="supprimer" layoutX="747.0" layoutY="634.0" mnemonicParsing="false" onAction="#enregistrer_client_chambre" onMouseEntered="#effet1" onMouseExited="#effet2" prefHeight="42.0" prefWidth="138.0" text="CLEAR" />
+                              <Label layoutX="287.0" layoutY="518.0" style="-fx-text-fill: BLUE;" text="Reservation Start Date" />
+                              <Button id="enregistrer" fx:id="book" layoutX="359.0" layoutY="634.0" mnemonicParsing="false" onAction="#reserver_chambre" onMouseEntered="#effet1" onMouseExited="#effet2" prefHeight="42.0" prefWidth="138.0" text="Book Room" />
+                              <DatePicker fx:id="debut_reser" layoutX="272.0" layoutY="538.0" />
+                              <DatePicker fx:id="fin_reser" layoutX="498.0" layoutY="538.0" />
+                              <Label layoutX="519.0" layoutY="518.0" text="End Date of Reservation" />
+                              <TextField fx:id="lastname" layoutX="22.0" layoutY="222.0" prefHeight="26.0" prefWidth="168.0" style="-fx-background-color: WHITE; -fx-background-radius: 5px;" stylesheets="@../ressources/style.css" />
+                              <Label layoutX="37.0" layoutY="205.0" text="Last Name" />
+                              <Label layoutX="37.0" layoutY="605.0" text="Number of Adult(s)" />
+                              <TextField fx:id="nbreadult" layoutX="28.0" layoutY="622.0" prefHeight="26.0" prefWidth="174.0" style="-fx-background-color: WHITE; -fx-background-radius: 5px;" />
+                              <TextField fx:id="nbreenfant" layoutX="378.0" layoutY="167.0" prefHeight="26.0" prefWidth="171.0" style="-fx-background-color: WHITE; -fx-background-radius: 5px;" />
+                              <Label layoutX="406.0" layoutY="144.0" text="Number of Children(s)" />
+                           </children>
+                           <effect>
+                              <InnerShadow />
+                           </effect>
+                        </AnchorPane>
+                     </children>
+                  </AnchorPane>
+               </children></AnchorPane>
+      </content>
+    </Tab>
+    <Tab text="CHECK IN">
+      <content>
+        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" stylesheets="@../ressources/style_check_in.css">
+               <children>
+                  <ImageView fitHeight="795.0" fitWidth="1285.0" layoutX="-1.0" layoutY="-4.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../ressources/The%20Westin%20Bonaventure%20Hotel%20&amp;%20Suites,%20Los%20Angeles%20-%20Front%20Desk.jpeg" />
+                     </image>
+                  </ImageView>
+                  <TableView fx:id="table_view_check_in" layoutX="256.0" layoutY="86.0" onMouseClicked="#handleMouseAction" prefHeight="614.0" prefWidth="716.0">
+                    <columns>
+                        <TableColumn fx:id="col_ID_client_reservator" prefWidth="57.666656494140625" text="ID" />
+                      <TableColumn fx:id="col_name1" prefWidth="107.33334350585938" text="First Name" />
+                      <TableColumn fx:id="col_name2" prefWidth="82.33334350585938" text="last Name" />
+                        <TableColumn fx:id="col_phone_client" prefWidth="98.0" text="Mobile Number" />
+                        <TableColumn fx:id="col_nationality" prefWidth="82.6666259765625" text="Nationality" />
+                        <TableColumn fx:id="col_gender" prefWidth="87.66668701171875" text="Gender" />
+                        <TableColumn fx:id="col_email" prefWidth="95.66668701171875" text="Email" />
+                        <TableColumn fx:id="col_check_in" prefWidth="121.0" text="Check in date" />
+                    </columns>
+                  </TableView>
+                  <Button fx:id="refresh_check_in" layoutX="39.0" layoutY="35.0" mnemonicParsing="false" onAction="#refresh_check_in" onMouseEntered="#effet1" onMouseExited="#effet2" prefHeight="29.0" prefWidth="90.0" style="-fx-background-radius: 15px;" text="Refresh">
+                     <graphic>
+                        <ImageView fitHeight="22.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../ressources/refresh.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button fx:id="delete_check_in" layoutX="155.0" layoutY="36.0" mnemonicParsing="false" onAction="#delete_check_in" onMouseEntered="#effet1" onMouseExited="#effet2" prefHeight="29.0" prefWidth="90.0" style="-fx-background-radius: 15px;" text="Delete">
+                     <graphic>
+                        <ImageView fitHeight="22.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../ressources/delete.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button fx:id="update_check_in" layoutX="265.0" layoutY="36.0" mnemonicParsing="false" onAction="#Update_check_in" onMouseEntered="#effet1" onMouseExited="#effet2" prefHeight="29.0" prefWidth="90.0" style="-fx-background-radius: 15px;" text="Update">
+                     <graphic>
+                        <ImageView fitHeight="22.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../ressources/update.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <TextField fx:id="text_field_firstname" layoutX="25.0" layoutY="214.0" prefHeight="26.0" prefWidth="193.0" style="-fx-background-color: WHITE;" stylesheets="@../ressources/style.css" />
+                  <Label layoutX="55.0" layoutY="195.0" text="Firstname" />
+                  <TextField fx:id="text_field_lastname" layoutX="28.0" layoutY="315.0" prefHeight="26.0" prefWidth="193.0" style="-fx-background-color: WHITE;" />
+                  <Label layoutX="61.0" layoutY="295.0" text="Lastname" />
+                  <TextField fx:id="text_field_mobile_number" layoutX="31.0" layoutY="405.0" prefHeight="26.0" prefWidth="193.0" style="-fx-background-color: WHITE;" />
+                  <Label layoutX="57.0" layoutY="384.0" text="Mobile Number" />
+                  <TextField fx:id="text_field_nationality" layoutX="29.0" layoutY="501.0" prefHeight="26.0" prefWidth="194.0" style="-fx-background-color: WHITE;" />
+                  <Label layoutX="56.0" layoutY="482.0" text="Nationality" />
+                  <Button fx:id="search_check_in" layoutX="459.0" layoutY="39.0" mnemonicParsing="false" onAction="#recherche_check_in" onMouseEntered="#effet1" onMouseExited="#effet2" prefHeight="31.0" prefWidth="91.0" style="-fx-background-radius: 6px;" text="Search">
+                     <graphic>
+                        <ImageView fitHeight="22.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../ressources/search.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <TextField fx:id="search_barre" layoutX="570.0" layoutY="42.0" />
+                  <TextField fx:id="text_field_id_gender" layoutX="30.0" layoutY="583.0" prefHeight="26.0" prefWidth="194.0" />
+                  <TextField fx:id="text_field_id_email" layoutX="27.0" layoutY="666.0" prefHeight="26.0" prefWidth="197.0" />
+                  <Label layoutX="54.0" layoutY="555.0" prefHeight="31.0" prefWidth="58.0" text="Gender" />
+                  <Label layoutX="50.0" layoutY="646.0" text="Email" />
+                  <Label layoutX="55.0" layoutY="100.0" text="ID" />
+                  <TextField fx:id="text_field_id" layoutX="25.0" layoutY="122.0" prefHeight="26.0" prefWidth="191.0" />
+                  <ComboBox fx:id="combo_check_in" layoutX="736.0" layoutY="41.0" prefHeight="12.0" prefWidth="116.0" promptText="Search Field" />
+               </children></AnchorPane>
+      </content>
+    </Tab>
+      <Tab text="CHECK OUT">
+        <content>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" stylesheets="@../ressources/style_check_in.css">
+               <children>
+                  <ImageView fitHeight="793.0" fitWidth="996.0" layoutY="-1.0" pickOnBounds="true" preserveRatio="true" />
+                  <TableView fx:id="table_view_check_in1" layoutX="28.0" layoutY="192.0" onMouseClicked="#handleMouseAction2" prefHeight="575.0" prefWidth="944.0">
+                     <columns>
+                        <TableColumn fx:id="col_ID_client_reservator2" prefWidth="57.666656494140625" text="ID" />
+                        <TableColumn fx:id="col_name21" prefWidth="107.33334350585938" text="First Name" />
+                        <TableColumn fx:id="col_name3" prefWidth="82.33334350585938" text="Last Name" />
+                        <TableColumn fx:id="col_phone_client2" prefWidth="98.0" text="Mobile Number" />
+                        <TableColumn fx:id="col_nationality2" prefWidth="82.6666259765625" text="Nationality" />
+                        <TableColumn fx:id="col_gender2" prefWidth="87.66668701171875" text="Gender" />
+                        <TableColumn fx:id="col_email2" prefWidth="95.66668701171875" text="Email" />
+                        <TableColumn fx:id="col_check_in2" prefWidth="121.0" text="Check in date" />
+                        <TableColumn fx:id="room_number2" prefWidth="115.0" text="Room Number" />
+                        <TableColumn fx:id="Price_per_Day2" prefWidth="110.0" text="Price per Day" />
+                     </columns>
+                  </TableView>
+                  <Button fx:id="search2" layoutX="37.0" layoutY="48.0" mnemonicParsing="false" onAction="#recherche_check_out" onMouseEntered="#effet1" onMouseExited="#effet2" style="-fx-background-radius: 6px;" text="Search" />
+                  <TextField fx:id="text_field_research" layoutX="130.0" layoutY="52.0" />
+                  <ComboBox fx:id="search_field_check_out" layoutX="322.0" layoutY="52.0" prefHeight="28.0" prefWidth="119.0" promptText="Search Field" />
+                  <Button fx:id="check_out" layoutX="168.0" layoutY="129.0" mnemonicParsing="false" onAction="#execute_check_out" onMouseEntered="#effet1" onMouseExited="#effet2" prefHeight="37.0" prefWidth="91.0" style="-fx-background-radius: 15px;" text="Check Out" />
+                  <Button fx:id="clear_check_out" layoutX="291.0" layoutY="131.0" mnemonicParsing="false" onAction="#delete_Customer" onMouseEntered="#effet1" onMouseExited="#effet2" prefHeight="36.0" prefWidth="75.0" style="-fx-background-radius: 15px;" text="Clear" />
+                  <TextField fx:id="text_field_ID" layoutX="394.0" layoutY="137.0" prefHeight="30.0" prefWidth="76.0" />
+                  <Button fx:id="refresh2" layoutX="75.0" layoutY="129.0" mnemonicParsing="false" onAction="#refresh_check_out" onMouseEntered="#effet1" onMouseExited="#effet2" prefHeight="38.0" prefWidth="72.0" style="-fx-background-radius: 15px;" text="Refresh" />
+               </children></AnchorPane>
+        </content>
+      </Tab>
+      <Tab text="CLIENTS">
+        <content>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+        </content>
+      </Tab>
+      <Tab text="ROOMS">
+        <content>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" stylesheets="@../ressources/Room.css">
+               <children>
+                  <ImageView fitHeight="794.0" fitWidth="993.0" layoutY="-4.0" pickOnBounds="true" preserveRatio="true" />
+                  <TextField fx:id="chambre_libre" layoutX="222.0" layoutY="43.0" style="-fx-background-color: WHITE;" />
+                  <Label layoutX="50.0" layoutY="47.0" text="number of free rooms" />
+                  <Label layoutX="50.0" layoutY="90.0" text="Total Number of Rooms" />
+                  <TextField fx:id="total_chambre" layoutX="222.0" layoutY="86.0" />
+                  <TableView fx:id="chambre" layoutX="80.0" layoutY="247.0" prefHeight="448.0" prefWidth="854.0">
+                    <columns>
+                      <TableColumn fx:id="col_ID_chambre" prefWidth="37.0" text="ID" />
+                      <TableColumn fx:id="col_num_chambre" prefWidth="94.0" text="room number" />
+                        <TableColumn fx:id="col_prix_chambre" prefWidth="78.0" text="price per day" />
+                        <TableColumn fx:id="col_phone_cham" prefWidth="102.0" text="phone" />
+                        <TableColumn fx:id="col_status_cham" prefWidth="112.0" text="status" />
+                        <TableColumn fx:id="col_bed_cham" prefWidth="112.0" text="bed" />
+                        <TableColumn fx:id="col_type_cham" prefWidth="161.0" text="room type" />
+                        <TableColumn fx:id="col_max_people" prefWidth="157.0" text="Max people" />
+                    </columns>
+                  </TableView>
+                  <ComboBox fx:id="type_recherche" layoutX="416.0" layoutY="157.0" prefHeight="7.0" prefWidth="133.0" promptText="search field" />
+                  <Button fx:id="search" layoutX="76.0" layoutY="157.0" mnemonicParsing="false" onAction="#recherche_chambre" onDragEntered="#effet1" onDragExited="#effet2" onMouseEntered="#effet1" onMouseExited="#effet2" prefHeight="29.0" prefWidth="90.0" style="-fx-background-radius: 7px; -fx-background-color: #1B9CFC;" text="search">
+                     <graphic>
+                        <ImageView fitHeight="29.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../ressources/search.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <ComboBox fx:id="compare" layoutX="559.0" layoutY="159.0" prefHeight="7.0" prefWidth="121.0" promptText="Comparison" />
+                  <Button fx:id="refresh_chambre" layoutX="75.0" layoutY="202.0" mnemonicParsing="false" onAction="#rafraichir" onMouseEntered="#effet1" onMouseExited="#effet2" prefHeight="29.0" prefWidth="97.0" style="-fx-background-radius: 7px; -fx-background-color: #1B9CFC;" text="Refresh">
+                     <graphic>
+                        <ImageView fitHeight="37.0" fitWidth="31.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../ressources/refresh.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <TextField fx:id="element_rechercher" layoutX="212.0" layoutY="156.0" prefHeight="29.0" prefWidth="165.0" style="-fx-background-radius: 5px;" />
+               </children></AnchorPane>
+        </content>
+      </Tab>
+  </tabs>
+</TabPane>

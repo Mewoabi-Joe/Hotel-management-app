@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane id="welcomeAuthentification" prefHeight="768.0" prefWidth="1366.0" stylesheets="@../cssPac/styles.css" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllerPac.WelcomeLoginSignupController">
+   <children>
+      <HBox layoutX="1301.0" layoutY="1.0" prefHeight="25.0" prefWidth="51.0" spacing="15.0">
+         <children>
+            <ImageView fitHeight="25.0" fitWidth="25.0" onMouseClicked="#minimiseImageClicked" pickOnBounds="true" preserveRatio="true" style="-fx-rotate: ;" styleClass="toolImage">
+               <image>
+                  <Image url="@../iconPac/minimiseRed_20px.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="10.0" layoutY="10.0" onMouseClicked="#closeImageClicked" pickOnBounds="true" preserveRatio="true" styleClass="toolImage">
+               <image>
+                  <Image url="@../iconPac/closeRed_20px.png" />
+               </image>
+            </ImageView>
+         </children>
+      </HBox>
+      <JFXButton fx:id="proceedBtn" layoutX="605.0" layoutY="641.0" maxWidth="400.0" mnemonicParsing="false" onAction="#nextClicked" styleClass="mainButton" text="Get Started">
+         <graphic>
+            <ImageView fitHeight="20.0" fitWidth="22.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../iconPac/icons8_advance_75px_1.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </JFXButton>
+      <StackPane layoutX="461.0" layoutY="111.0">
+         <children>
+            <VBox alignment="CENTER" styleClass="transBox" />
+            <VBox alignment="CENTER">
+               <children>
+                  <Label styleClass="justOne" text="With Hotel Manager:" />
+                  <Label styleClass="afterWelcomeText" text="- Your receptionist day to day activities are simplified" />
+                  <Label styleClass="afterWelcomeText" text="- Administrative functionalities are gauranteed" />
+               </children>
+            </VBox>
+         </children>
+      </StackPane>
+   </children>
+</AnchorPane>

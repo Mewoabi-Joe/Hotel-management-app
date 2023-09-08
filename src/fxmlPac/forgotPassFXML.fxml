@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane id="imagePane" prefHeight="768.0" prefWidth="1366.0" stylesheets="@../cssPac/styles.css" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllerPac.ForgotPassController">
+   <children>
+      <AnchorPane fx:id="anchorPane" layoutX="391.0" layoutY="143.0">
+         <children>
+            <VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="550.0" styleClass="mover" stylesheets="@../cssPac/styles.css">
+               <children>
+                  <ImageView fitHeight="60.0" fitWidth="91.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../iconPac/icons8_password_reset_75px_2.png" />
+                     </image>
+                  </ImageView>
+                  <Label alignment="CENTER" prefHeight="35.0" prefWidth="436.0" styleClass="title" text="Change Your Forgotten Hotel Manager Password" />
+                  <VBox alignment="CENTER" spacing="25.0">
+                     <children>
+                        <JFXTextField fx:id="emailTF" promptText="Email" />
+                        <JFXTextField fx:id="securityQuessTF" promptText="Your security Question" />
+                        <JFXTextField fx:id="answerTF" promptText="Answer" />
+                        <JFXTextField fx:id="newPassTF" promptText="New password" />
+                        <JFXButton fx:id="proceedBtn" maxWidth="400.0" mnemonicParsing="false" onAction="#ProceedBtnClicked" styleClass="sceneButton" text="Proceed to next step">
+                           <graphic>
+                              <ImageView fitHeight="20.0" fitWidth="22.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../iconPac/icons8_advance_75px_1.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic></JFXButton>
+                        <JFXButton mnemonicParsing="false" onAction="#loginBtn" styleClass="mainButton" text="Sign in">
+                           <graphic>
+                              <ImageView fitHeight="20.0" fitWidth="22.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../iconPac/icons8_workspace_30px.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic></JFXButton>
+                     </children>
+                     <VBox.margin>
+                        <Insets left="120.0" right="120.0" />
+                     </VBox.margin>
+                     <padding>
+                        <Insets top="20.0" />
+                     </padding>
+                  </VBox>
+               </children>
+               <padding>
+                  <Insets bottom="90.0" top="90.0" />
+               </padding>
+            </VBox>
+         </children>
+      </AnchorPane>
+      <HBox layoutX="1301.0" layoutY="1.0" prefHeight="25.0" prefWidth="51.0" spacing="15.0">
+         <children>
+            <ImageView fitHeight="25.0" fitWidth="25.0" onMouseClicked="#minimiseImageClicked" pickOnBounds="true" preserveRatio="true" style="-fx-rotate: ;" styleClass="toolImage">
+               <image>
+                  <Image url="@../iconPac/minimiseRed_20px.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="10.0" layoutY="10.0" onMouseClicked="#closeImageClicked" pickOnBounds="true" preserveRatio="true" styleClass="toolImage">
+               <image>
+                  <Image url="@../iconPac/closeRed_20px.png" />
+               </image>
+            </ImageView>
+         </children>
+      </HBox>
+   </children>
+</AnchorPane>

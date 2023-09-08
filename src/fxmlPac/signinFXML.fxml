@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXPasswordField?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox alignment="TOP_CENTER" prefHeight="400.0" prefWidth="350.0" spacing="10.0" styleClass="mover" stylesheets="@../cssPac/styles.css" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllerPac.SigninController">
+   <children>
+      <ImageView fitHeight="68.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../iconPac/icons8_user_70px.png" />
+         </image>
+      </ImageView>
+      <Label alignment="CENTER" prefHeight="35.0" prefWidth="230.0" styleClass="title" text="Sign In to Hotel Manager" />
+      <VBox alignment="CENTER" spacing="30.0">
+         <children>
+            <HBox alignment="CENTER">
+               <children>
+                  <JFXTextField fx:id="emailTF" focusColor="#1ef213" labelFloat="true" prefHeight="25.0" prefWidth="249.0" promptText="Email" />
+                  <ImageView fitHeight="26.0" fitWidth="29.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../iconPac/icons8_shared_mail_30px_1.png" />
+                     </image></ImageView>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER">
+               <children>
+                  <JFXPasswordField fx:id="passwordPassF" focusColor="#1ef213" labelFloat="true" prefHeight="25.0" prefWidth="208.0" promptText="Password" />
+                  <ImageView fitHeight="26.0" fitWidth="29.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../iconPac/icons8_password_30px_3.png" />
+                     </image></ImageView>
+               </children>
+            </HBox>
+            <JFXButton fx:id="loginBtn" buttonType="RAISED" mnemonicParsing="false" onAction="#loginButtonClicked" styleClass="sceneButton" text="Sign In">
+               <graphic>
+                  <ImageView fitHeight="20.0" fitWidth="22.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../iconPac/icons8_workspace_30px.png" />
+                     </image></ImageView>
+               </graphic></JFXButton>
+            <JFXButton buttonType="RAISED" mnemonicParsing="false" onAction="#passwordForgottenButtonClicked" styleClass="sceneButton" text="Forgotten Password?">
+               <graphic>
+                  <ImageView fitHeight="20.0" fitWidth="22.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../iconPac/icons8_password_reset_30px_1.png" />
+                     </image>
+                  </ImageView>
+               </graphic></JFXButton>
+         </children>
+         <padding>
+            <Insets left="60.0" right="60.0" top="30.0" />
+         </padding>
+      </VBox>
+   </children>
+   <padding>
+      <Insets top="10.0" />
+   </padding>
+</VBox>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXNodesList?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.text.Text?>
+
+
+<StackPane fx:id="stackPane" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllerPac.MainImageController">
+   <children>
+      <AnchorPane fx:id="anchor" prefHeight="768.0" prefWidth="1366.0">
+         <children>
+            <JFXNodesList layoutX="1000.0" layoutY="134.0">
+               <children>
+                  <JFXButton fx:id="exitBtn" buttonType="RAISED" text="Exit" />
+                  <JFXButton fx:id="closeBtn" buttonType="RAISED" onAction="#closeClicked" text="Close" />
+                  <JFXButton fx:id="logoutBtn" buttonType="RAISED" text="Logout" />
+               </children>
+            </JFXNodesList>
+            <HBox fx:id="myHbox" layoutX="245.0" layoutY="159.0" prefHeight="5.0" prefWidth="67.0">
+               <children>
+                  <ImageView fx:id="image" fitHeight="15.0" fitWidth="15.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../iconPac/error.png" />
+                     </image>
+                  </ImageView>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Error" />
+               </children>
+            </HBox>
+         </children>
+      </AnchorPane>
+   </children>
+</StackPane>

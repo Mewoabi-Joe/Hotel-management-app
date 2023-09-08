@@ -1,0 +1,597 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXDatePicker?>
+<?import com.jfoenix.controls.JFXNodesList?>
+<?import com.jfoenix.controls.JFXTabPane?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="768.0" prefWidth="1366.0" styleClass="painOverTabPane" stylesheets="@../cssPac/styles.css" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllerPac.ReceptionistController">
+   <children>
+      <JFXTabPane layoutY="28.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="740.0" prefWidth="1366.0" stylesheets="@../cssPac/styles.css" tabClosingPolicy="UNAVAILABLE">
+         <tabs>
+            <Tab text="BOOKING">
+               <content>
+                  <BorderPane>
+                     <center>
+                        <HBox alignment="CENTER" spacing="200.0">
+                           <children>
+                              <VBox spacing="40.0">
+                                 <children>
+                                    <JFXTextField fx:id="name" labelFloat="true" prefHeight="26.0" prefWidth="168.0" promptText="First name" styleClass="textFieldsTabPanes" />
+                                    <JFXTextField fx:id="lastname" labelFloat="true" prefHeight="26.0" prefWidth="168.0" promptText="Last name" styleClass="textFieldsTabPanes" />
+                                    <JFXTextField fx:id="mobile" labelFloat="true" prefHeight="26.0" prefWidth="168.0" promptText="Mobile number" styleClass="textFieldsTabPanes" />
+                                    <JFXTextField fx:id="nationality" labelFloat="true" prefHeight="26.0" prefWidth="173.0" promptText="Nationality" styleClass="textFieldsTabPanes" />
+                                    <JFXComboBox fx:id="gender" accessibleText="&#10;" labelFloat="true" onAction="#valeurs" prefHeight="28.0" prefWidth="168.0" promptText="Gender" style="-fx-background-radius: 5px;" styleClass="textFieldsTabPanes" />
+                                    <JFXTextField fx:id="email" labelFloat="true" prefHeight="26.0" prefWidth="170.0" promptText="Email" styleClass="textFieldsTabPanes" />
+                                 </children>
+                              </VBox>
+                              <VBox spacing="40.0">
+                                 <children>
+                                    <JFXTextField fx:id="nbreadult" labelFloat="true" prefHeight="26.0" prefWidth="174.0" promptText="Number of Adults" styleClass="textFieldsTabPanes" />
+                                    <JFXTextField fx:id="nbreenfant" labelFloat="true" prefHeight="26.0" prefWidth="171.0" promptText="Number of children" styleClass="textFieldsTabPanes" />
+                                    <JFXTextField fx:id="address" labelFloat="true" prefHeight="26.0" prefWidth="171.0" promptText="Address" styleClass="textFieldsTabPanes" />
+                                    <JFXTextField fx:id="checkin" labelFloat="true" prefHeight="26.0" prefWidth="168.0" promptText="Registration time" styleClass="textFieldsTabPanes" />
+                                    <JFXComboBox fx:id="bed" labelFloat="true" onAction="#valeurs" onMouseEntered="#effet1" onMouseExited="#effet2" prefHeight="28.0" prefWidth="168.0" promptText="Bed type" style="-fx-background-radius: 5px;" styleClass="textFieldsTabPanes" />
+                                    <JFXTextField fx:id="numberofday" labelFloat="true" prefHeight="26.0" prefWidth="172.0" promptText="Number of days(For direct Check in)" styleClass="textFieldsTabPanes" />
+                                    <JFXDatePicker fx:id="debut_reser" promptText="Check in day" styleClass="textFieldsTabPanes" />
+                                    <JFXDatePicker fx:id="fin_reser" promptText="Check out day" styleClass="textFieldsTabPanes" />
+                                 </children>
+                              </VBox>
+                              <VBox spacing="40.0">
+                                 <children>
+                                    <JFXComboBox fx:id="room_type" labelFloat="true" onAction="#valeurs" prefHeight="28.0" prefWidth="168.0" promptText="Room type" style="-fx-background-radius: 5px;" styleClass="textFieldsTabPanes" />
+                                    <JFXComboBox fx:id="room_number" labelFloat="true" onAction="#valeurs" prefHeight="28.0" prefWidth="168.0" promptText="Room number" style="-fx-background-radius: 5px;" styleClass="textFieldsTabPanes" />
+                                    <JFXComboBox fx:id="room_service" labelFloat="true" onAction="#valeurs" prefHeight="28.0" prefWidth="168.0" promptText="payment method" style="-fx-background-radius: 5px;" styleClass="textFieldsTabPanes" />
+                                    <JFXTextField fx:id="price" labelFloat="true" prefHeight="26.0" prefWidth="168.0" promptText="Price per day" styleClass="textFieldsTabPanes" />
+                                    <JFXTextField fx:id="finalprice" labelFloat="true" prefHeight="26.0" prefWidth="172.0" promptText="Total amount" styleClass="textFieldsTabPanes" />
+                                 </children>
+                              </VBox>
+                           </children>
+                        </HBox>
+                     </center>
+                     <bottom>
+                        <HBox alignment="CENTER" spacing="200.0" BorderPane.alignment="CENTER">
+                           <children>
+                              <JFXButton fx:id="refresh_booking" onAction="#Refresh_booking" styleClass="crudButton" text="Refresh">
+                                 <graphic>
+                                    <ImageView fitHeight="24.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../iconPac/icons8_synchronize_60px.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic></JFXButton>
+                              <JFXButton id="enregistrer" fx:id="supprimer" mnemonicParsing="false" onAction="#enregistrer_client_chambre" onMouseEntered="#effet1" onMouseExited="#effet2" prefHeight="32.0" prefWidth="138.0" styleClass="crudButton" text="Undo">
+                                 <graphic>
+                                    <ImageView fitHeight="24.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../iconPac/icons8_undo_60px_1.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic></JFXButton>
+                              <JFXButton id="enregistrer" fx:id="enregistrer" mnemonicParsing="false" onAction="#enregistrer_client_chambre" onMouseEntered="#effet1" onMouseExited="#effet2" prefHeight="20.0" prefWidth="138.0" styleClass="crudButton" text="Check In">
+                                 <graphic>
+                                    <ImageView fitHeight="24.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../iconPac/icons8_reception_60px.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic></JFXButton>
+                              <JFXButton id="enregistrer" fx:id="book" mnemonicParsing="false" onAction="#reserver_chambre" onMouseEntered="#effet1" onMouseExited="#effet2" prefHeight="0.0" prefWidth="138.0" styleClass="crudButton" text="Book Room">
+                                 <graphic>
+                                    <ImageView fitHeight="24.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../iconPac/icons8_add_user_group_woman_man_skin_type_7_50px.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic></JFXButton>
+                           </children>
+                        </HBox>
+                     </bottom>
+                     <padding>
+                        <Insets bottom="40.0" left="40.0" right="40.0" top="40.0" />
+                     </padding>
+                  </BorderPane>
+               </content>
+               <graphic>
+                  <ImageView fitHeight="43.0" fitWidth="68.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../iconPac/icons8_add_user_group_woman_man_skin_type_7_50px.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Tab>
+            <Tab text="CHECK IN">
+               <content>
+                  <BorderPane>
+                     <center>
+                        <TableView fx:id="table_view_check_in" onMouseClicked="#handleMouseAction" prefHeight="614.0" prefWidth="716.0">
+                           <columns>
+                              <TableColumn fx:id="col_ID_client_reservator" prefWidth="57.666656494140625" text="ID" />
+                              <TableColumn fx:id="col_name1" prefWidth="107.33334350585938" text="First Name" />
+                              <TableColumn fx:id="col_name2" prefWidth="82.33334350585938" text="last Name" />
+                              <TableColumn fx:id="col_phone_client" prefWidth="98.0" text="Mobile Number" />
+                              <TableColumn fx:id="col_nationality" prefWidth="82.6666259765625" text="Nationality" />
+                              <TableColumn fx:id="col_gender" prefWidth="87.66668701171875" text="Gender" />
+                              <TableColumn fx:id="col_email" prefWidth="95.66668701171875" text="Email" />
+                              <TableColumn fx:id="col_check_in" prefWidth="121.0" text="Check in date" />
+                           </columns>
+                           <BorderPane.margin>
+                              <Insets bottom="10.0" left="40.0" right="40.0" top="20.0" />
+                           </BorderPane.margin>
+                           <columnResizePolicy>
+                              <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                           </columnResizePolicy>
+                           <padding>
+                              <Insets bottom="20.0" />
+                           </padding>
+                        </TableView>
+                     </center>
+                     <top>
+                        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="40.0" BorderPane.alignment="CENTER">
+                           <children>
+                              <JFXButton fx:id="search_check_in" mnemonicParsing="false" onAction="#recherche_check_in" onMouseEntered="#effet1" onMouseExited="#effet2" prefWidth="91.0" styleClass="mainButton" text="Search">
+                                 <graphic>
+                                    <ImageView fitHeight="22.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../iconPac/icons8_search_60px.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </JFXButton>
+                              <JFXTextField fx:id="search_barre" labelFloat="true" promptText="Search by a choosen column" styleClass="textFieldsTabPanes" />
+                              <JFXComboBox fx:id="combo_check_in" labelFloat="true" prefHeight="12.0" prefWidth="116.0" promptText="Search Field" styleClass="textFieldsTabPanes" />
+                              <JFXButton fx:id="refresh_check_in" mnemonicParsing="false" onAction="#refresh_check_in" onMouseEntered="#effet1" onMouseExited="#effet2" prefHeight="29.0" prefWidth="90.0" style="-fx-background-radius: 15px;" styleClass="mainButton" text="Refresh">
+                                 <graphic>
+                                    <ImageView fitHeight="22.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../iconPac/icons8_synchronize_60px.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </JFXButton>
+                           </children>
+                        </HBox>
+                     </top>
+                     <bottom>
+                        <VBox BorderPane.alignment="CENTER">
+                           <children>
+                              <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="20.0">
+                                 <children>
+                                    <JFXTextField fx:id="text_field_id" labelFloat="true" prefHeight="26.0" prefWidth="191.0" promptText="ID" styleClass="textFieldsTabPanes" />
+                                    <JFXTextField fx:id="text_field_firstname" labelFloat="true" prefHeight="26.0" prefWidth="193.0" promptText="First name" styleClass="textFieldsTabPanes" />
+                                    <JFXTextField fx:id="text_field_lastname" labelFloat="true" prefHeight="26.0" prefWidth="193.0" promptText="Last name" styleClass="textFieldsTabPanes" />
+                                    <JFXTextField fx:id="text_field_mobile_number" labelFloat="true" prefHeight="26.0" prefWidth="193.0" promptText="Mobile number" styleClass="textFieldsTabPanes" />
+                                    <JFXTextField fx:id="text_field_nationality" labelFloat="true" prefHeight="26.0" prefWidth="194.0" promptText="Nationality" styleClass="textFieldsTabPanes" />
+                                    <JFXTextField fx:id="text_field_id_gender" labelFloat="true" prefHeight="26.0" prefWidth="194.0" promptText="Gender" styleClass="textFieldsTabPanes" />
+                                    <JFXTextField fx:id="text_field_id_email" labelFloat="true" prefHeight="26.0" prefWidth="197.0" promptText="Email" styleClass="textFieldsTabPanes" />
+                                 </children>
+                                 <padding>
+                                    <Insets left="40.0" right="40.0" />
+                                 </padding>
+                              </HBox>
+                              <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="200.0">
+                                 <children>
+                                    <JFXButton fx:id="delete_check_in" mnemonicParsing="false" onAction="#delete_check_in" onMouseEntered="#effet1" onMouseExited="#effet2" prefHeight="29.0" prefWidth="90.0" style="-fx-background-radius: 15px;" styleClass="crudButton" text="Delete">
+                                       <graphic>
+                                          <ImageView fitHeight="22.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../iconPac/icons8_delete_bin_60px.png" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic>
+                                    </JFXButton>
+                                    <JFXButton fx:id="check_statut" onAction="#Check_statut" prefHeight="0.0" styleClass="crudButton" text="Check in">
+                                       <graphic>
+                                          <ImageView fitHeight="22.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../iconPac/icons8_reception_60px.png" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic></JFXButton>
+                                    <JFXButton fx:id="update_check_in" mnemonicParsing="false" onAction="#Update_check_in" onMouseEntered="#effet1" onMouseExited="#effet2" prefHeight="0.0" prefWidth="90.0" style="-fx-background-radius: 15px;" styleClass="crudButton" text="Update">
+                                       <graphic>
+                                          <ImageView fitHeight="22.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../iconPac/icons8_update_60px.png" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic>
+                                    </JFXButton>
+                                 </children>
+                              </HBox>
+                           </children>
+                        </VBox>
+                     </bottom>
+                     <padding>
+                        <Insets bottom="20.0" left="40.0" right="40.0" top="20.0" />
+                     </padding>
+                  </BorderPane>
+               </content>
+               <graphic>
+                  <ImageView fitHeight="43.0" fitWidth="68.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../iconPac/icons8_reception_60px.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Tab>
+            <Tab text="CHECK OUT">
+               <content>
+                  <BorderPane>
+                     <center>
+                        <TableView fx:id="table_view_check_in1" onMouseClicked="#handleMouseAction2" prefHeight="575.0" prefWidth="944.0">
+                           <columns>
+                              <TableColumn fx:id="col_ID_client_reservator2" prefWidth="57.666656494140625" text="ID" />
+                              <TableColumn fx:id="col_name21" prefWidth="107.33334350585938" text="First Name" />
+                              <TableColumn fx:id="col_name3" prefWidth="82.33334350585938" text="Last Name" />
+                              <TableColumn fx:id="col_phone_client2" prefWidth="98.0" text="Mobile Number" />
+                              <TableColumn fx:id="col_nationality2" prefWidth="82.6666259765625" text="Nationality" />
+                              <TableColumn fx:id="col_gender2" prefWidth="87.66668701171875" text="Gender" />
+                              <TableColumn fx:id="col_email2" prefWidth="95.66668701171875" text="Email" />
+                              <TableColumn fx:id="col_check_in2" prefWidth="121.0" text="Check in date" />
+                              <TableColumn fx:id="room_number2" prefWidth="115.0" text="Room Number" />
+                              <TableColumn fx:id="Price_per_Day2" prefWidth="110.0" text="Price per Day" />
+                           </columns>
+                           <padding>
+                              <Insets bottom="20.0" />
+                           </padding>
+                           <BorderPane.margin>
+                              <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                           </BorderPane.margin>
+                           <columnResizePolicy>
+                              <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                           </columnResizePolicy>
+                        </TableView>
+                     </center>
+                     <top>
+                        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="20.0" BorderPane.alignment="CENTER">
+                           <children>
+                              <JFXButton fx:id="search2" mnemonicParsing="false" onAction="#recherche_check_out" onMouseEntered="#effet1" onMouseExited="#effet2" styleClass="mainButton" text="Search">
+                                 <graphic>
+                                    <ImageView fitHeight="22.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../iconPac/icons8_search_60px.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic></JFXButton>
+                              <JFXTextField fx:id="text_field_research" styleClass="textFieldsTabPanes" />
+                              <JFXComboBox fx:id="search_field_check_out" prefHeight="28.0" prefWidth="119.0" promptText="Search Field" styleClass="textFieldsTabPanes" />
+                              <JFXButton fx:id="refresh2" mnemonicParsing="false" onAction="#refresh_check_out" onMouseEntered="#effet1" onMouseExited="#effet2" prefWidth="72.0" styleClass="mainButton" text="Refresh">
+                                 <graphic>
+                                    <ImageView fitHeight="22.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../iconPac/icons8_synchronize_60px.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic></JFXButton>
+                           </children>
+                        </HBox>
+                     </top>
+                     <bottom>
+                        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="100.0" BorderPane.alignment="CENTER">
+                           <children>
+                              <JFXButton fx:id="check_out" mnemonicParsing="false" onAction="#execute_check_out" onMouseEntered="#effet1" onMouseExited="#effet2" prefHeight="37.0" prefWidth="91.0" styleClass="crudButton" text="Check Out">
+                                 <graphic>
+                                    <ImageView fitHeight="22.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../iconPac/icons8_walking_60px.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic></JFXButton>
+                              <JFXTextField fx:id="text_field_ID" alignment="CENTER" prefHeight="30.0" prefWidth="76.0" />
+                              <JFXButton fx:id="clear_check_out" mnemonicParsing="false" onAction="#delete_Customer" onMouseEntered="#effet1" onMouseExited="#effet2" prefHeight="36.0" prefWidth="75.0" styleClass="crudButton" text="Clear">
+                                 <graphic>
+                                    <ImageView fitHeight="22.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../iconPac/icons8_clear_formatting_60px.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic></JFXButton>
+                           </children>
+                        </HBox>
+                     </bottom>
+                     <padding>
+                        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                     </padding>
+                  </BorderPane>
+               </content>
+               <graphic>
+                  <ImageView fitHeight="43.0" fitWidth="68.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../iconPac/icons8_walking_60px.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Tab>
+            <Tab text="CLIENTS">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <BorderPane prefHeight="707.0" prefWidth="1366.0">
+                           <center>
+                              <TableView fx:id="tvClientsRecep" prefHeight="396.0" prefWidth="580.0" BorderPane.alignment="CENTER">
+                                 <columns>
+                                    <TableColumn fx:id="ClIDCol" prefWidth="75.0" text="Id" />
+                                    <TableColumn fx:id="ClFirstNameCol" prefWidth="75.0" text="First name" />
+                                    <TableColumn fx:id="ClEmailCol" prefWidth="75.0" text="Email" />
+                                    <TableColumn fx:id="ClCountryCol" prefWidth="75.0" text="Country" />
+                                    <TableColumn fx:id="ClStatusCol" prefWidth="75.0" text="Status" />
+                                    <TableColumn fx:id="ClMethodCol" prefWidth="75.0" text="Method" />
+                                    <TableColumn fx:id="ClPaidCol" prefWidth="75.0" text="Amount Paid" />
+                                    <TableColumn fx:id="ClCheckInCol" prefWidth="75.0" text="Check in  " />
+                                    <TableColumn fx:id="ClCheckOutCol" prefWidth="75.0" text="Check out" />
+                                    <TableColumn fx:id="ClRoomNumCol" prefWidth="75.0" text="room number" />
+                                 </columns>
+                                 <columnResizePolicy>
+                                    <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                                 </columnResizePolicy>
+                                 <BorderPane.margin>
+                                    <Insets bottom="20.0" left="40.0" right="40.0" top="40.0" />
+                                 </BorderPane.margin>
+                                 <padding>
+                                    <Insets bottom="20.0" />
+                                 </padding>
+                              </TableView>
+                           </center>
+                           <top>
+                              <AnchorPane BorderPane.alignment="CENTER">
+                                 <children>
+                                    <HBox alignment="CENTER" prefHeight="100.0" prefWidth="1323.0" spacing="10.0">
+                                       <children>
+                                          <JFXButton mnemonicParsing="false" onAction="#searchBtnClClicked" styleClass="mainButton" text="Search">
+                                             <graphic>
+                                                <ImageView fitHeight="22.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
+                                                   <image>
+                                                      <Image url="@../iconPac/icons8_search_60px.png" />
+                                                   </image>
+                                                </ImageView>
+                                             </graphic></JFXButton>
+                                          <JFXTextField fx:id="searchTFCl" alignment="CENTER" maxWidth="500.0" promptText="search by any of the columns excluding id" styleClass="textFieldsTabPanes" HBox.hgrow="ALWAYS" />
+                                          <JFXButton mnemonicParsing="false" onAction="#refreshBtnClClicked" styleClass="mainButton" text="Refresh">
+                                             <graphic>
+                                                <ImageView fitHeight="22.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
+                                                   <image>
+                                                      <Image url="@../iconPac/icons8_synchronize_60px.png" />
+                                                   </image>
+                                                </ImageView>
+                                             </graphic></JFXButton>
+                                          <HBox prefHeight="100.0" prefWidth="5.0" />
+                                       </children>
+                                    </HBox>
+                                 </children>
+                              </AnchorPane>
+                           </top>
+                           <padding>
+                              <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                           </padding>
+                        </BorderPane>
+                     </children></AnchorPane>
+               </content>
+               <graphic>
+                  <ImageView fitHeight="43.0" fitWidth="68.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../iconPac/icons8_people_60px.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Tab>
+            <Tab text="ROOMS">
+               <content>
+                  <BorderPane>
+                     <center>
+                        <TableView fx:id="chambre" prefHeight="448.0" prefWidth="854.0">
+                           <columns>
+                              <TableColumn fx:id="col_ID_chambre" prefWidth="37.0" text="ID" />
+                              <TableColumn fx:id="col_num_chambre" prefWidth="94.0" text="room number" />
+                              <TableColumn fx:id="col_prix_chambre" prefWidth="78.0" text="price per day" />
+                              <TableColumn fx:id="col_phone_cham" prefWidth="102.0" text="phone" />
+                              <TableColumn fx:id="col_status_cham" prefWidth="112.0" text="status" />
+                              <TableColumn fx:id="col_bed_cham" prefWidth="112.0" text="bed" />
+                              <TableColumn fx:id="col_type_cham" prefWidth="161.0" text="room type" />
+                              <TableColumn fx:id="col_max_people" prefWidth="157.0" text="Max people" />
+                           </columns>
+                           <BorderPane.margin>
+                              <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                           </BorderPane.margin>
+                           <columnResizePolicy>
+                              <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                           </columnResizePolicy>
+                           <padding>
+                              <Insets bottom="20.0" />
+                           </padding>
+                        </TableView>
+                     </center>
+                     <top>
+                        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="20.0" BorderPane.alignment="CENTER">
+                           <children>
+                              <JFXButton fx:id="search" mnemonicParsing="false" onAction="#recherche_chambre" onDragEntered="#effet1" onDragExited="#effet2" onMouseEntered="#effet1" onMouseExited="#effet2" prefHeight="0.0" prefWidth="90.0" styleClass="mainButton" text="search">
+                                 <graphic>
+                                    <ImageView fitHeight="22.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../iconPac/icons8_search_60px.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </JFXButton>
+                              <JFXTextField fx:id="element_rechercher" prefHeight="29.0" prefWidth="165.0" />
+                              <JFXComboBox fx:id="type_recherche" prefHeight="7.0" prefWidth="133.0" promptText="search field" />
+                              <JFXComboBox fx:id="compare" prefHeight="7.0" prefWidth="121.0" promptText="Comparison" />
+                              <JFXButton fx:id="refresh_chambre" mnemonicParsing="false" onAction="#rafraichir" onMouseEntered="#effet1" onMouseExited="#effet2" prefWidth="97.0" styleClass="mainButton" text="Refresh">
+                                 <graphic>
+                                    <ImageView fitHeight="22.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../iconPac/icons8_synchronize_60px.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </JFXButton>
+                           </children>
+                        </HBox>
+                     </top>
+                     <bottom>
+                        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="20.0" BorderPane.alignment="CENTER">
+                           <children>
+                              <JFXTextField fx:id="chambre_libre" alignment="CENTER" labelFloat="true" promptText="Number of free rooms" />
+                              <JFXTextField fx:id="total_chambre" alignment="CENTER" labelFloat="true" promptText="Total number of rooms" />
+                           </children>
+                        </HBox>
+                     </bottom>
+                     <padding>
+                        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                     </padding>
+                  </BorderPane>
+               </content>
+               <graphic>
+                  <ImageView fitHeight="43.0" fitWidth="68.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../iconPac/icons8_house_60px.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Tab>
+            <Tab text="My Profile">
+               <content>
+                  <BorderPane>
+                     <bottom>
+                        <HBox alignment="BOTTOM_LEFT" spacing="200.0" BorderPane.alignment="CENTER">
+                           <children>
+                              <JFXButton id="enregistrer" mnemonicParsing="false" onAction="#pUpdateBtnClicked" onMouseEntered="#effet1" onMouseExited="#effet2" prefHeight="42.0" prefWidth="138.0" styleClass="crudButton" text="Update">
+                                 <graphic>
+                                    <ImageView fitHeight="22.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../iconPac/icons8_update_60px.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic></JFXButton>
+                           </children>
+                        </HBox>
+                     </bottom>
+                     <padding>
+                        <Insets bottom="40.0" left="40.0" right="40.0" top="40.0" />
+                     </padding>
+                     <left>
+                        <VBox spacing="40.0" BorderPane.alignment="CENTER">
+                           <children>
+                              <JFXTextField fx:id="pFirstNameTF" labelFloat="true" prefHeight="26.0" prefWidth="168.0" promptText="First name" styleClass="textFieldsTabPanes" />
+                              <JFXTextField fx:id="pLastNameTF" labelFloat="true" prefHeight="26.0" prefWidth="168.0" promptText="Last name" styleClass="textFieldsTabPanes" />
+                              <JFXTextField fx:id="pEmailTF" labelFloat="true" prefHeight="26.0" prefWidth="170.0" promptText="Email" styleClass="textFieldsTabPanes" />
+                              <JFXComboBox fx:id="pGenderCB" accessibleText="&#10;" labelFloat="true" onAction="#valeurs" prefHeight="28.0" prefWidth="168.0" promptText="Gender" style="-fx-background-radius: 5px;" styleClass="textFieldsTabPanes" />
+                              <JFXDatePicker fx:id="pDateOfBirthDP" promptText="date of birth" />
+                              <JFXTextField fx:id="pIDCardNoTF" labelFloat="true" prefHeight="26.0" prefWidth="168.0" promptText="Id card Number" styleClass="textFieldsTabPanes" />
+                              <JFXTextField fx:id="pAddressTF" labelFloat="true" prefHeight="26.0" prefWidth="173.0" promptText="Address" styleClass="textFieldsTabPanes" />
+                           </children>
+                        </VBox>
+                     </left>
+                     <center>
+                        <TableView fx:id="tvPlanning" prefHeight="545.0" prefWidth="1061.0" BorderPane.alignment="CENTER">
+                          <columns>
+                            <TableColumn fx:id="pIDCol" prefWidth="75.0" text="Planning ID" />
+                            <TableColumn fx:id="pMonthCol" prefWidth="75.0" text="Month" />
+                              <TableColumn fx:id="pStartDayCol" prefWidth="75.0" text="Start day" />
+                              <TableColumn fx:id="pEndDayCol" prefWidth="75.0" text="End day" />
+                              <TableColumn fx:id="pStartHourCol" prefWidth="75.0" text="Start hour" />
+                              <TableColumn fx:id="pEndHourCol" prefWidth="75.0" text="End hour" />
+                          </columns>
+                           <BorderPane.margin>
+                              <Insets bottom="70.0" left="60.0" />
+                           </BorderPane.margin>
+                           <columnResizePolicy>
+                              <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                           </columnResizePolicy>
+                        </TableView>
+                     </center>
+                     <top>
+                        <HBox alignment="CENTER" BorderPane.alignment="CENTER">
+                           <BorderPane.margin>
+                              <Insets bottom="30.0" />
+                           </BorderPane.margin>
+                           <children>
+                              <Region prefHeight="37.0" prefWidth="234.0" />
+                              <ImageView fitHeight="37.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../iconPac/icons8_calendar_31_60px.png" />
+                                 </image>
+                              </ImageView>
+                              <Label alignment="CENTER_RIGHT" prefHeight="25.0" prefWidth="148.0" styleClass="afterWelcomeText" text="My Time table" />
+                           </children>
+                        </HBox>
+                     </top>
+                  </BorderPane>
+               </content>
+               <graphic>
+                  <ImageView fitHeight="43.0" fitWidth="68.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../iconPac/icons8_profile_60px.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Tab>
+         </tabs>
+      </JFXTabPane>
+      <HBox layoutX="1254.0" layoutY="-1.0" prefHeight="29.0" prefWidth="106.0" spacing="20.0">
+         <children>
+            <JFXButton buttonType="RAISED" onAction="#minimiseBtnClicked" prefHeight="16.0" prefWidth="30.0" styleClass="toolBarButton" stylesheets="@../cssPac/styles.css" text=" ">
+               <graphic>
+                  <ImageView fitHeight="17.0" fitWidth="17.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../iconPac/minimiseRed_20px.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </JFXButton>
+            <JFXNodesList spacing="15.0">
+               <children>
+                  <JFXButton buttonType="RAISED" styleClass="toolBarButton" stylesheets="@../cssPac/styles.css" text=" ">
+                     <graphic>
+                        <ImageView fitHeight="17.0" fitWidth="17.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../iconPac/shutdown_30px.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </JFXButton>
+                  <JFXButton fx:id="exitBtn" buttonType="RAISED" layoutX="-4.0" layoutY="10.0" onAction="#exitBtnClicked" styleClass="toolBarButton" stylesheets="@../cssPac/styles.css" text=" ">
+                     <graphic>
+                        <ImageView fitHeight="17.0" fitWidth="17.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../iconPac/closeRed_20px.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </JFXButton>
+                  <JFXButton fx:id="logoutBtn" buttonType="RAISED" layoutX="-4.0" layoutY="10.0" onAction="#logOutBtnClicked" styleClass="toolBarButton" stylesheets="@../cssPac/styles.css" text=" ">
+                     <graphic>
+                        <ImageView fitHeight="17.0" fitWidth="17.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../iconPac/export_30px_1.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </JFXButton>
+               </children>
+            </JFXNodesList>
+         </children>
+      </HBox>
+      <ImageView fitHeight="23.0" fitWidth="23.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../iconPac/hotel_30px.png" />
+         </image>
+      </ImageView>
+      <Text layoutX="23.0" layoutY="19.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Hotel Manager" wrappingWidth="113.13671875" />
+   </children>
+</AnchorPane>
